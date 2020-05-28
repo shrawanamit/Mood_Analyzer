@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "MteKDysy3UJtUQyQY7UHsQrGDo4c/7gYCB28dvthe3lYj/+lykvJNpc9g++YwlePYHldq7wwzBHEZT7sOyrPcw==",
+  "success": true,
+  "projectFilePath": "G:\\vs\\moodAnalyzer\\moodAnalyzer\\moodAnalyzer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\amit\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

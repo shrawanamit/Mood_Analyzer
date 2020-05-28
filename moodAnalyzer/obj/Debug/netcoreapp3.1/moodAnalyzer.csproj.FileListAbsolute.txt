@@ -1,0 +1,13 @@
+G:\vs\moodAnalyzer\moodAnalyzer\bin\Debug\netcoreapp3.1\moodAnalyzer.exe
+G:\vs\moodAnalyzer\moodAnalyzer\bin\Debug\netcoreapp3.1\moodAnalyzer.deps.json
+G:\vs\moodAnalyzer\moodAnalyzer\bin\Debug\netcoreapp3.1\moodAnalyzer.runtimeconfig.json
+G:\vs\moodAnalyzer\moodAnalyzer\bin\Debug\netcoreapp3.1\moodAnalyzer.runtimeconfig.dev.json
+G:\vs\moodAnalyzer\moodAnalyzer\bin\Debug\netcoreapp3.1\moodAnalyzer.dll
+G:\vs\moodAnalyzer\moodAnalyzer\bin\Debug\netcoreapp3.1\moodAnalyzer.pdb
+G:\vs\moodAnalyzer\moodAnalyzer\obj\Debug\netcoreapp3.1\moodAnalyzer.csprojAssemblyReference.cache
+G:\vs\moodAnalyzer\moodAnalyzer\obj\Debug\netcoreapp3.1\moodAnalyzer.AssemblyInfoInputs.cache
+G:\vs\moodAnalyzer\moodAnalyzer\obj\Debug\netcoreapp3.1\moodAnalyzer.AssemblyInfo.cs
+G:\vs\moodAnalyzer\moodAnalyzer\obj\Debug\netcoreapp3.1\moodAnalyzer.csproj.CoreCompileInputs.cache
+G:\vs\moodAnalyzer\moodAnalyzer\obj\Debug\netcoreapp3.1\moodAnalyzer.dll
+G:\vs\moodAnalyzer\moodAnalyzer\obj\Debug\netcoreapp3.1\moodAnalyzer.pdb
+G:\vs\moodAnalyzer\moodAnalyzer\obj\Debug\netcoreapp3.1\moodAnalyzer.genruntimeconfig.cache
