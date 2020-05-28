@@ -6,15 +6,20 @@ namespace moodAnalyzer
 {
     public class Mood
     {
-        public string analyzerMood(string massage)
+        string massage;
+        public Mood() { }
+        public Mood(string massage) {
+            this.massage = massage;
+        }
+        public string analyzerMood()
         {
-            if (massage == "I am in any mood")
+            if (massage.Contains("I am in sad mood"))
             {
-                return "Happy";
+                return "Sad";
             }
             else
             {
-                return "Sad";
+                return "Happy";
             }
         }
     }
