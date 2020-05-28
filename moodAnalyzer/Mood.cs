@@ -8,7 +8,7 @@ namespace moodAnalyzer
     {
         public string analyzerMood(string massage)
         {
-            if (massage == "good")
+            if (massage == "I am in any mood")
             {
                 return "Happy";
             }
