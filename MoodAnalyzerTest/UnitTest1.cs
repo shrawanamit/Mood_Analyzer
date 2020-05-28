@@ -13,8 +13,8 @@ namespace MoodAnalyzerTest
         public void givenMassageHappyAndSad_AfterAnalyser_shouldReturnEqualResult()
         {
             Mood mood = new Mood();
-            string result = mood.analyzerMood("good");
-            Assert.AreEqual("Happy", result);
+            string result = mood.analyzerMood("I am in sad mood");
+            Assert.AreEqual("Sad", result);
 
 
         }
