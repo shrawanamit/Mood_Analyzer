@@ -13,7 +13,7 @@ namespace moodAnalyzer
         }
         public string analyzerMood()
         {
-            if (massage.Contains("I am in sad mood"))
+            if (massage.Contains("I am in happy mood"))
             {
                 return "Sad";
             }
