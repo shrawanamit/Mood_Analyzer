@@ -12,15 +12,22 @@ namespace moodAnalyzer
             this.massage = massage;
         }
         public string analyzerMood()
-        {
-            if (massage.Contains("I am in happy mood"))
             {
-                return "Sad";
+            try {
+                if (massage.Contains("I am in Sad mood"))
+                {
+                    return "Sad";
+                }
+                else
+                {
+                    return "Happy";
+                }
             }
-            else
+            catch (NullReferenceException)
             {
-                return "Happy";
+               return  "Happy";
             }
+
         }
     }
 }
