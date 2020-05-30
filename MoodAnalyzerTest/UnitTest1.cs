@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using moodAnalyzer;
+using MoodAnalyzer;
 namespace MoodAnalyzerTest
 {
     public class Tests
@@ -29,9 +30,30 @@ namespace MoodAnalyzerTest
         [Test]
         public void givenMassageNull_AfterAnalyser_shouldReturnEqualResult()
         {
-            Mood mood = new Mood(null);
-            string result = mood.analyzerMood();
-            Assert.AreEqual("Happy", result);
+            try {
+                Mood mood = new Mood(null);
+                string result = mood.analyzerMood();
+            }
+            catch (MoodAnalyzerException e)
+            {
+                Assert.AreEqual(MoodAnalyzerException.ExceptionType.ENTERED_NULL, e.type);
+            }
         }
+        
+        [Test]
+        public void givenMassageEmpty_AfterAnalyser_shouldReturnEqualResult()
+        {
+            try
+            {
+                Mood mood = new Mood(" ");
+                string result = mood.analyzerMood();
+            }
+            catch (MoodAnalyzerException e)
+            {
+                Assert.AreEqual(MoodAnalyzerException.ExceptionType.ENTERED_EMPTY, e.type);
+            }
+        }
+
+
     }
 }

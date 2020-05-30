@@ -1,4 +1,5 @@
 ﻿using System;
+using MoodAnalyzer;
 using System.Collections.Generic;
 using System.Text;
 
@@ -25,7 +26,7 @@ namespace moodAnalyzer
             }
             catch (NullReferenceException)
             {
-               return  "Happy";
+                throw new MoodAnalyzerException(MoodAnalyzerException.ExceptionType.ENTERED_NULL, "Please Enter Proper Mood");
             }
 
         }
