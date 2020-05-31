@@ -30,7 +30,8 @@ namespace MoodAnalyzerTest
         [Test]
         public void givenMassageNull_AfterAnalyser_shouldReturnEqualResult()
         {
-            try {
+            try
+            {
                 Mood mood = new Mood(null);
                 string result = mood.analyzerMood();
             }
@@ -39,7 +40,7 @@ namespace MoodAnalyzerTest
                 Assert.AreEqual(MoodAnalyzerException.ExceptionType.ENTERED_NULL, e.type);
             }
         }
-        
+
         [Test]
         public void givenMassageEmpty_AfterAnalyser_shouldReturnEqualResult()
         {
@@ -54,6 +55,27 @@ namespace MoodAnalyzerTest
             }
         }
 
+        [Test]
+        public void givenMoodAnalyser_whenProper_shouldReturnObject()
+        {
+            object reflactionObj = MoodAnalyzerFactory.createObjectUsingReflaction("moodAnalyzer.Mood");
+            Mood mood = new Mood();
+            bool actual = mood.Equals(reflactionObj);
+            Assert.AreEqual(false, actual);
+        }
 
+        [Test]
+        public void givenMoodAnalyserModdClass_whenInProper_shouldReturnNoSuchClass()
+        {
+
+            try
+            {
+                object reflactionObj = MoodAnalyzerFactory.createObjectUsingReflaction("moodAnalyzer.mood");
+            }
+            catch (MoodAnalyzerException e)
+            {
+                Assert.AreEqual(MoodAnalyzerException.ExceptionType.NO_SUCH_CLASS_EXCEPTION, e.type);
+            }
+        }
     }
 }
