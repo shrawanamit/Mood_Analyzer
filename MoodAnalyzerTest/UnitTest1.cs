@@ -77,5 +77,26 @@ namespace MoodAnalyzerTest
                 Assert.AreEqual(MoodAnalyzerException.ExceptionType.NO_SUCH_CLASS_EXCEPTION, e.type);
             }
         }
+        [Test]
+        public void givenMoodAnalyserWithParameteriseConstructer_whenProper_shouldReturnObject()
+        {
+            object reflactionObj = MoodAnalyzerFactory.createObjectUsingReflactionWithParameterizeConstructer("moodAnalyzer.Mood", "I am in Sad Mood");
+            Mood mood = new Mood("I am in Sad Mood");
+            bool actual = mood.Equals(reflactionObj);
+            Assert.AreEqual(false, actual);
+        }
+        [Test]
+        public void givenMoodAnalyserWithParameteriseConstructer_whenInProper_shouldReturnNoSuchClass()
+        {
+
+            try
+            {
+                object reflactionObj = MoodAnalyzerFactory.createObjectUsingReflaction("moodAnalyzer.mood");
+            }
+            catch (MoodAnalyzerException e)
+            {
+                Assert.AreEqual(MoodAnalyzerException.ExceptionType.NO_SUCH_CLASS_EXCEPTION, e.type);
+            }
+        }
     }
 }
