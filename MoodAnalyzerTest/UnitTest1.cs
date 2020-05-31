@@ -80,7 +80,7 @@ namespace MoodAnalyzerTest
         [Test]
         public void givenMoodAnalyserWithParameteriseConstructer_whenProper_shouldReturnObject()
         {
-            object reflactionObj = MoodAnalyzerFactory.createObjectUsingReflactionWithParameterizeConstructer("moodAnalyzer.Mood", "I am in Sad Mood");
+            object reflactionObj = MoodAnalyzerFactory.createObjectUsingReflaction("moodAnalyzer.Mood", "I am in Sad Mood");
             Mood mood = new Mood("I am in Sad Mood");
             bool actual = mood.Equals(reflactionObj);
             Assert.AreEqual(false, actual);
