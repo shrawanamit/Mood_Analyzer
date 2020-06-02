@@ -58,7 +58,7 @@ namespace MoodAnalyzerTest
         [Test]
         public void givenMoodAnalyser_whenProper_shouldReturnObject()
         {
-            object reflactionObj = MoodAnalyzerFactory.createObjectUsingReflaction("moodAnalyzer.Mood");
+            object reflactionObj = MoodAnalyzerReflecter.createObjectUsingReflaction("moodAnalyzer.Mood");
             Mood mood = new Mood();
             bool actual = mood.Equals(reflactionObj);
             Assert.AreEqual(false, actual);
@@ -70,7 +70,7 @@ namespace MoodAnalyzerTest
 
             try
             {
-                object reflactionObj = MoodAnalyzerFactory.createObjectUsingReflaction("moodAnalyzer.mood");
+                object reflactionObj = MoodAnalyzerReflecter.createObjectUsingReflaction("moodAnalyzer.mood");
             }
             catch (MoodAnalyzerException e)
             {
@@ -80,7 +80,7 @@ namespace MoodAnalyzerTest
         [Test]
         public void givenMoodAnalyserWithParameteriseConstructer_whenProper_shouldReturnObject()
         {
-            object reflactionObj = MoodAnalyzerFactory.createObjectUsingReflaction("moodAnalyzer.Mood", "I am in Sad Mood");
+            object reflactionObj = MoodAnalyzerReflecter.createObjectUsingReflaction("moodAnalyzer.Mood", "I am in Sad Mood");
             Mood mood = new Mood("I am in Sad Mood");
             bool actual = mood.Equals(reflactionObj);
             Assert.AreEqual(false, actual);
@@ -91,11 +91,32 @@ namespace MoodAnalyzerTest
 
             try
             {
-                object reflactionObj = MoodAnalyzerFactory.createObjectUsingReflaction("moodAnalyzer.mood");
+                object reflactionObj = MoodAnalyzerReflecter.createObjectUsingReflaction("moodAnalyzer.mood");
             }
             catch (MoodAnalyzerException e)
             {
                 Assert.AreEqual(MoodAnalyzerException.ExceptionType.NO_SUCH_CLASS_EXCEPTION, e.type);
+            }
+        }
+        
+        [Test]
+        public void givenMoodAnalyserMethod_whenProper_shouldReturnProperMessage()
+        {
+            object value = MoodAnalyzerReflecter.invokeMethodUsingReflaction("analyzerMood");
+            Assert.AreEqual("Happy", value);
+        }
+        
+        [Test]
+        public void givenMoodAnalyserImproperMethod_whenProper_shouldReturnProperMessage()
+        {
+
+            try
+            {
+                object value = MoodAnalyzerReflecter.invokeMethodUsingReflaction("analyzermood");
+            }
+            catch (MoodAnalyzerException e)
+            {
+                Assert.AreEqual(MoodAnalyzerException.ExceptionType.NO_SUCH_FIELD_EXCEPTION, e.type);
             }
         }
     }

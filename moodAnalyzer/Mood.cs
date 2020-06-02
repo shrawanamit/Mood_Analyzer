@@ -13,6 +13,11 @@ namespace moodAnalyzer
         public string analyzerMood()
             {
             try {
+                if(this.massage == null)
+                {
+                    throw new MoodAnalyzerException(MoodAnalyzerException.ExceptionType.ENTERED_NULL, "Please Enter Proper Mood");
+                }
+
                 if (massage.Contains("I am in Sad Mood"))
                 {
                     return "Sad";
@@ -22,9 +27,9 @@ namespace moodAnalyzer
                     return "Happy";
                 }
             }
-            catch (NullReferenceException)
+            catch (MoodAnalyzerException)
             {
-                throw new MoodAnalyzerException(MoodAnalyzerException.ExceptionType.ENTERED_NULL, "Please Enter Proper Mood");
+                return "Happy";
             }
 
         }
